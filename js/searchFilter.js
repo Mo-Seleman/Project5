@@ -27,11 +27,13 @@ search.addEventListener("keyup", (e) => {
 console.log(e.target.value.toLowerCase());
 });
 
+// getAttribute 
+const element = document.getElementById("search"); 
+let text = element.getAttribute("data-caption");
+
+// Looping and Logging...
+
+// Target All Anchor Elements
+const anchors = document.querySelectorAll('a');
 
 
-// console.log(text);
-
-// function myFunction() {
-//   var x = document.getElementById("search");
-//   x.value = x.value.toLowerCase();
-// }
