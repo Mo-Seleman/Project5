@@ -3,34 +3,26 @@
 
 baguetteBox.run('.gridContainer');
 
-// /* KeyUp Function Linked To Search Bar */
-// const search = document.getElementById("search");
-// search.addEventListener("keyup", (e) => {
-// console.log(e.target.value.toLowerCase());
-// });
+// (1) Get Input Element 
+let inputLog = document.getElementById("search");
+// (2) Add Event Listener (KeyUp)
+inputLog.addEventListener('keyup', filterNames);
 
-// // Target All Anchor Elements
-// const anchors = document.querySelectorAll('a');
 
-// // Looping and Logging...
-// for (let i = 0; i < anchors.length; i++) {
+function filterNames() {
+// (3)Get Value of Input
+filterValue = document.getElementById("search").value.toLowerCase()
+};
+//Get Captions
+const anchors = document.querySelectorAll('a');
 
-// }
 
-// // getAttribute 
-// const element = document.getElementById("search"); 
-// let text = element.getAttribute("data-caption");
+for (let i = 0; i < anchors.length; i++){
+let captions = anchors[i].getAttribute("data-caption").toLowerCase();
+let filter =  captions.includes(filterValue);
+}
 
-/* KeyUp Function Linked To Search Bar */
-const search = document.getElementById("search");
-      search.addEventListener("keyup", (e) => {
-      console.log(e.target.value.toLowerCase());
-
-const anchors = document.querySelectorAll('a'); // Target All Anchor Elements
-
-for (let i = 0; i < anchors.length; i++) { // Looping and Logging...
-
-const captions = anchors[i].getAttribute("data-caption"); // getAttribute 
-      console.log(captions)
-  }
-});
+if (filter === true) {
+    display: "block";
+} else {display: "none";
+};
